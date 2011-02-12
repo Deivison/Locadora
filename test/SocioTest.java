@@ -1,6 +1,7 @@
 
 import java.util.Date;
 import junit.framework.*;
+import locadora.Socio;
 
 /*
  * To change this template, choose Tools | Templates
