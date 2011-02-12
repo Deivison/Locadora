@@ -13,6 +13,7 @@ import junit.framework.*;
  */
 public class SocioTest extends TestCase {
      public void testLocarFilme(int codigo, int inscricao, Date data_emprestimo){
+         System.out.print("1 linha");
     
      
 }
