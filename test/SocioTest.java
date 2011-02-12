@@ -15,5 +15,6 @@ import locadora.Socio;
 public class SocioTest extends TestCase {
      public void testLocarFilme(int codigo, int inscricao, Date data_emprestimo){
          Socio socio = new Socio();
+         socio.locarFilme();
 }
 }
