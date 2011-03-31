@@ -20,6 +20,11 @@ public class Socio {
     private String endereco;
     private String telefone;
 
+    public Socio(int inscricao, String nome, String endereco, String telefone) {
+        if (nome == null || nome.isEmpty())
+            throw new DadosInsuficientesException("nome");
+    }
+
     /**
      * @return the inscricao
      */

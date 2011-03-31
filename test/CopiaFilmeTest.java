@@ -19,13 +19,17 @@ import locadora.CopiaFilme;
  * @author Deivison
  */
 public class CopiaFilmeTest extends TestCase {
-//abc
+
     CopiaFilme[] copiaFilme = new CopiaFilme[10];
     private int inteiroTestado;
     private String stringTestada;
     private int posicao = 0;
 
     public void inicializarCopiaFilme(){
+//        copiaFilme[posicao] = new CopiaFilme();
+    }
+
+    public void setUp(){
         copiaFilme[posicao] = new CopiaFilme();
     }
 
@@ -87,11 +91,18 @@ public class CopiaFilmeTest extends TestCase {
         assertEquals(stringTestada, copiaFilme[posicao].getDiretor());
     }
 
-    public void testArtistasPrincipais(){
+    public void testArtPrinc1(){
         inicializarCopiaFilme();
-        String[] vetorTestado = {"Sam Worthington", "Zoë Saldaña"};
-        copiaFilme[posicao].setArtistasPrincipais(vetorTestado);
-        assertEquals(vetorTestado, copiaFilme[posicao].getArtistasPrincipais());
+        stringTestada = "Sam Worthington";
+        copiaFilme[posicao].setArtPrinc1(stringTestada);
+        assertEquals(stringTestada, copiaFilme[posicao].getArtPrinc1());
+    }
+
+   public void testArtPrinc2(){
+        inicializarCopiaFilme();
+        stringTestada = "Zoë Saldaña";
+        copiaFilme[posicao].setArtPrinc2(stringTestada);
+        assertEquals(stringTestada, copiaFilme[posicao].getArtPrinc2());
     }
 
     public void testEstado(){
@@ -110,17 +121,13 @@ public class CopiaFilmeTest extends TestCase {
         assertTrue(estadoValido);
     }
 
-    public void testDataAquisicao(){
+    public void testDataAquisicao() throws ParseException {
         inicializarCopiaFilme();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date data = null;
         String stringData = "24/01/2011";
-        try {
-            data = formato.parse(stringData);
-            copiaFilme[posicao].setDataAquisicao(data);
-        } catch (ParseException ex) {
-            Logger.getLogger(CopiaFilmeTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        data = formato.parse(stringData);
+        copiaFilme[posicao].setDataAquisicao(data);
         assertEquals(data, copiaFilme[posicao].getDataAquisicao());
     }
 }

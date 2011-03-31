@@ -13,12 +13,17 @@ import java.util.Date;
  */
 public class Emprestimo {
 
+    private int inscricaoSocio;
+    private double valorPago;
+    private String dataEmprestimo, dataDevolucao;
+
     public Emprestimo(){
     }
 
-    private int inscricaoSocio;
-    private Date dataEmprestimo, dataDevolucao;
-    private float valorPago;
+    public Emprestimo(int inscricao, String pdataEmprestimo){
+        inscricaoSocio = inscricao;
+        dataEmprestimo = pdataEmprestimo;
+    }
 
     /**
      * @return the inscricaoSocio
@@ -37,43 +42,42 @@ public class Emprestimo {
     /**
      * @return the dataEmprestimo
      */
-    public Date getDataEmprestimo() {
+    public String getDataEmprestimo() {
         return dataEmprestimo;
     }
 
     /**
      * @param dataEmprestimo the dataEmprestimo to set
      */
-    public void setDataEmprestimo(Date dataEmprestimo) {
+    public void setDataEmprestimo(String dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
 
     /**
      * @return the dataDevolucao
      */
-    public Date getDataDevolucao() {
+    public String getDataDevolucao() {
         return dataDevolucao;
     }
 
     /**
      * @param dataDevolucao the dataDevolucao to set
      */
-    public void setDataDevolucao(Date dataDevolucao) {
+    public void setDataDevolucao(String dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 
     /**
      * @return the valorPago
      */
-    public float getValorPago() {
+    public double getValorPago() {
         return valorPago;
     }
 
     /**
      * @param valorPago the valorPago to set
      */
-    public void setValorPago(float valorPago) {
+    public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
-
 }
